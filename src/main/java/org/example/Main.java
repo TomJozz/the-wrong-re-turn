@@ -3,17 +3,17 @@ package org.example;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
         String content = DigitReader.readFileAsString("./hyperskill-dataset.txt");
-
-
+        var frequencies = DigitCounter.countDigits(content);
+        var topDigits = TopDigitsFinder.findTopNDigits(frequencies, 5);
+        for (var topDigit : topDigits) {
+            System.out.println(topDigit.getKey() + ":" + topDigit.getValue() + " times" );
+        }
     }
 }
 
@@ -43,7 +43,13 @@ class TopDigitsFinder {
     public static List<Map.Entry<Character, Integer>> findTopNDigits(Map<Character, Integer> frequencyMap, int n) {
         return frequencyMap.entrySet()
                 .stream()
-                .sorted((a, b) -> b.getValue().compareTo(a.getValue()))
+                .sorted((a, b) -> {
+                    int freq = b.getValue().compareTo(a.getValue());
+                    if (freq != 0) {
+                        return freq;
+                    }
+                    return Character.compare(b.getKey(), a.getKey());
+                })
                 .limit(n)
                 .collect(Collectors.toList());
     }
