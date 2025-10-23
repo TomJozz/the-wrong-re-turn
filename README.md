@@ -1,8 +1,9 @@
 # [The wrong re-turn](https://hyperskill.org/learn/daily/53135)
 Hyperskill Fright Night Coding Challenge Day 1
 
-### blah blah blah ...
-So you walked. Mud, fog, regret. At last, a gate appeared. Behind it, a mansion hunched in the dark, like an artefact of an era long gone, its windows faintly glowing. Maybe you could ask for a phone call, tell your uncle what happened, surely he could pick you up.
+It was a perfectly miserable autumn day: rain, gray skies, and 
+... blah blah blah ...
+At last, a gate appeared. Behind it, a mansion hunched in the dark, ... blah blah blah.
 
 ### The only problem is the gate. How do you open it? There is a panel with 10 digits and a brief instruction:
 
